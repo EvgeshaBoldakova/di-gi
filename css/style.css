@@ -5,6 +5,10 @@
   --secondary-font-family: Roboto Condensed;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   width: 1440px;
   height: 4962px;
