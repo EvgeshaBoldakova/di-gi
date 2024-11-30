@@ -722,7 +722,7 @@ hr {
   .products {
     border-right: none;
     position: relative;
-  }  
+  }
 }
 
 @media only screen and (max-width: 1023px) {
@@ -735,7 +735,7 @@ hr {
   .service {
     grid-row: 1;
     grid-column: 1 / span 2;
-    border-bottom: 1px solid rgba(249, 246, 229, 1);
+    border-bottom: none;
     border-right: none;
   }
   .service h1 {
@@ -758,18 +758,24 @@ hr {
     top: 231px;
     left: 46px;
   }
-  .strategy,
-  .social_media,
-  .content_production,
   .digital_advertising {
-    border-right: 1px solid rgba(249, 246, 229, 1);
     border-top: 1px solid rgba(249, 246, 229, 1);
   }
-  .analytics,
+  .strategy {
+    border-top: 1px solid rgba(249, 246, 229, 1);
+  }
+  .social_media,
   .development,
-  .design,
+  .content_production,
+  .design {
+    border-top: none;
+  }
+  .analytics,
   .products {
     border-top: 1px solid rgba(249, 246, 229, 1);
+    border-right: none;
+  }
+  .design {
     border-right: none;
   }
   .items h2 {
@@ -878,7 +884,8 @@ hr {
   .products {
     border-left: 1px solid rgba(249, 246, 229, 1);
   }
-  .products {
+  .products,
+  .content_production {
     border-bottom: 1px solid rgba(249, 246, 229, 1);
   }
   .analytics,
@@ -886,6 +893,9 @@ hr {
   .design,
   .products {
     border-right: 1px solid rgba(249, 246, 229, 1);
+  }
+  .strategy {
+    border-bottom: none;
   }
 }
 
