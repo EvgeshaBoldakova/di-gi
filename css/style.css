@@ -421,7 +421,7 @@ hr {
   line-height: 32px;
 }
 .text p {
-  font-family: Dosis,sans-serif;
+  font-family: var(--tertiary-font-family), sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 18px;
