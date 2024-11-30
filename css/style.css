@@ -1458,6 +1458,7 @@ hr {
   display: block;
   width: 270px;
   height: auto;
+  border-radius: 4px;
 }
 .news-1::before,
 .news-2::before,
@@ -1481,6 +1482,7 @@ hr {
   letter-spacing: 2px;
   z-index: 1;
   transition: all 0.3s ease;
+  border-radius: 0 0 4px 4px;
 }
 .news-1::before {
   content: "3Д в брендингу";
@@ -1516,12 +1518,13 @@ hr {
 .news-8:hover::before {
   bottom: 30px;
   background-color: rgba(43, 64, 116, 1);
-  color: var(--secondary-color);
+  color: var(--secondary-color);  
 }
 .news-1:hover, .news-2:hover, .news-3:hover, .news-4:hover,
 .news-5:hover, .news-6:hover, .news-7:hover, .news-8:hover {
   outline: 10px solid rgba(43, 64, 116, 1);
   outline-offset: -10px;
+  border-radius: 0 0 4px 4px;
 }
 .icon {
   position: absolute;
