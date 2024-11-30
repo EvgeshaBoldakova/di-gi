@@ -565,7 +565,7 @@ hr {
   border-right: 1px solid rgba(249, 246, 229, 1);
   text-align: left;
 }
-.service h2 {
+.service h1 {
   position: absolute;
   top: 90px;
   left: 62px;
@@ -704,7 +704,7 @@ hr {
     border-bottom: 1px solid rgba(249, 246, 229, 1);
     border-right: none;
   }
-  .service h2 {
+  .service h1 {
     top: 52px;
     left: 50%;
     transform: translateX(-50%);
@@ -748,7 +748,7 @@ hr {
     border-bottom: 1px solid rgba(249, 246, 229, 1);
     border-right: none;
   }
-  .service h2 {
+  .service h1 {
     top: 42px;
     left: 50%;
     transform: translateX(-50%);
@@ -805,7 +805,7 @@ hr {
     height: 1551px;
     top: 740px;
   }
-  .service h2 {
+  .service h1 {
     top: 18px;
   }
   .service h2 {
@@ -855,7 +855,7 @@ hr {
     grid-row: 1;
     grid-column: 1 / span 1;
   }
-  .service h2 {
+  .service h1 {
     top: 25px;
     font-size: 24px;
     line-height: 28px;
