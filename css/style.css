@@ -440,6 +440,10 @@ hr {
   position: absolute;
   top: 71px;
   right: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 .button--call_back:hover {
   background-color: rgba(219, 216, 199, 1);
