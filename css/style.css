@@ -147,6 +147,10 @@ hr {
   transform: translateX(-50%);
   color: rgba(249, 246, 229, 1);
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 .button--more_detail:hover {
   background-color: rgba(23, 44, 96, 1);
