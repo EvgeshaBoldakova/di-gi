@@ -631,11 +631,7 @@ hr {
 }
 .strategy,
 .analytics,
-.social_media {
-  border-right: 1px solid rgba(249, 246, 229, 1);
-  border-bottom: 1px solid rgba(249, 246, 229, 1);
-  position: relative;
-}
+.social_media,
 .development {
   border-right: 1px solid rgba(249, 246, 229, 1);
   border-bottom: 1px solid rgba(249, 246, 229, 1);
@@ -643,10 +639,7 @@ hr {
 }
 .content_production,
 .design,
-.digital_advertising {
-  border-right: 1px solid rgba(249, 246, 229, 1);
-  position: relative;
-}
+.digital_advertising,
 .products {
   border-right: 1px solid rgba(249, 246, 229, 1);
   position: relative;
