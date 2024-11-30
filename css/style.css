@@ -3,6 +3,7 @@
   --secondary-color: rgba(255, 255, 255, 1); /* white */
   --main-font-family: Roboto;
   --secondary-font-family: Roboto Condensed;
+  --tertiary-font-family: Dosis;
 }
 
 body {
