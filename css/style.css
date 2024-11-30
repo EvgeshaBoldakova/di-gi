@@ -1523,7 +1523,7 @@ hr {
 .news-5:hover, .news-6:hover, .news-7:hover, .news-8:hover {
   outline: 10px solid rgba(43, 64, 116, 1);
   outline-offset: -10px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
 }
 .icon {
   position: absolute;
