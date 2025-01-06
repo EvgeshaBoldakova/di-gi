@@ -9,6 +9,11 @@
   --graphite-color: rgba(74, 74, 74, 1);
   --graphite-light-color: rgba(121, 121, 121, 1);
 
+  --main-border-radius: 4px;
+  --secondary-border-radius: 3px;
+  --circle-border-radius: 50%;
+  --special-border-radius: 0 0 4px 4px;
+
   --main-font-family: Roboto;
   --secondary-font-family: Roboto Condensed;
   --tertiary-font-family: Dosis;
@@ -37,7 +42,7 @@ hr {
 .button {
   display: inline-block;
   border: none;
-  border-radius: 3px;
+  border-radius: var(--secondary-border-radius);
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: var(--main-font-family), sans-serif;
@@ -65,7 +70,7 @@ hr {
   margin-right: 135px;
   width: 40px;
   height: 40px;
-  border-radius: 3px;
+  border-radius: var(--secondary-border-radius);
   background-color: var(--secondary-color);
   cursor: pointer;
   display: flex;
@@ -84,9 +89,6 @@ hr {
   .menu_button {
     margin-right: 30px;
   }
-  .container {
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 639px) {
@@ -95,9 +97,6 @@ hr {
   }
   .di_gi img {
     margin-left: 25px;
-  }
-  .container {
-    width: 100%;
   }
   .menu_button {
     margin-right: 20px;
@@ -202,7 +201,7 @@ hr {
   z-index: 10;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: var(--circle-border-radius);
   cursor: pointer;
   background-color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
@@ -381,12 +380,10 @@ hr {
   }
   .text h2 {
     font-size: 18px;
-    font-weight: 500;
     line-height: 18px;
   }
   .text p {
     font-size: 14px;
-    font-weight: 300;
     line-height: 16px;
   }
   .button--call_back {
@@ -400,17 +397,15 @@ hr {
   }
   .text {
     margin-left: 46px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
   .text h2 {
     font-size: 24px;
-    font-weight: 500;
     line-height: 24px;
   }
   .text p {
     margin-top: 37px;
     font-size: 16px;
-    font-weight: 300;
     line-height: 18px;
   }
   .button--call_back {
@@ -432,13 +427,11 @@ hr {
   }
   .text h2 {
     font-size: 24px;
-    font-weight: 500;
     line-height: 24px;
   }
   .text p {
     margin-top: 15px;
     font-size: 16px;
-    font-weight: 300;
     line-height: 18px;
   }
   .button--call_back {
@@ -455,12 +448,10 @@ hr {
   }
   .text h2 {
     font-size: 24px;
-    font-weight: 500;
     line-height: 24px;
   }
   .text p {
     font-size: 16px;
-    font-weight: 300;
     line-height: 18px;
   }
 }
@@ -477,7 +468,6 @@ hr {
 .service {
   grid-row: 1 / span 2;
   grid-column: 1;
-  position: relative;
   border-right: 1px solid var(--tertiary-color);
   text-align: left;
 }
@@ -519,8 +509,15 @@ hr {
 }
 .items {
   display: flex;
-  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
+}
+.items img {
+  transition: transform 0.3s ease;
+  width: 64px;
+  height: 64px;
+  transform: translateY(80px);
 }
 .items h2 {
   font-family: var(--secondary-font-family), sans-serif;
@@ -529,13 +526,8 @@ hr {
   line-height: 19px;
   letter-spacing: 2px;
   color: var(--graphite-color);
+  transform: translateY(80px);
   transition: transform 0.3s ease;
-  margin-top: 160px;
-}
-.items img {
-  transition: transform 0.3s ease;
-  position: absolute;
-  margin-top: 79px;
 }
 .strategy,
 .analytics,
@@ -543,18 +535,14 @@ hr {
 .development {
   border-right: 1px solid var(--tertiary-color);
   border-bottom: 1px solid var(--tertiary-color);
-  position: relative;
 }
 .content_production,
 .design,
 .digital_advertising,
 .products {
   border-right: 1px solid var(--tertiary-color);
-  position: relative;
 }
 .description {
-  position: absolute;
-  top: 134px;
   font-family: var(--main-font-family), sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -562,12 +550,14 @@ hr {
   text-align: center;
   color: rgba(155, 155, 155, 1);
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(50px);
   transition: all 0.3s ease;
 }
+.digital_advertising .description {
+  transform: translateY(30px);
+}
 .more_detail {
-  position: absolute;
-  top: 200px;
+  margin: 0;
   font-family: var(--secondary-font-family), sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -577,11 +567,14 @@ hr {
   color: var(--main-color);
   text-decoration: none;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(50px);
   transition: all 0.3s ease;
 }
+.digital_advertising .more_detail {
+  transform: translateY(30px);
+}
 .items:hover img, .items:hover h2 {
-  transform: translateY(-40px);
+  transform: translateY(40px);
 }
 .items:hover {
   outline: 4px solid var(--main-color);
@@ -628,7 +621,6 @@ hr {
   .development,
   .products {
     border-right: none;
-    position: relative;
   }
 }
 
@@ -685,20 +677,26 @@ hr {
     border-right: none;
   }
   .items h2 {
-    margin-top:193px;
+    transform: translateY(110px);
   }
   .items img {
-    margin-top: 112px;
+    transform: translateY(110px);
   }
   .description {
     width: 350px;
-    top: 164px;
+    transform: translateY(80px);
+  }
+  .digital_advertising .description {
+    transform: translateY(60px);
   }
   .more_detail {
-    top: 240px;
+    transform: translateY(90px);
+  }
+  .digital_advertising .more_detail {
+    transform: translateY(70px);
   }
   .items:hover img, .items:hover h2 {
-    transform: translateY(-50px);
+    transform: translateY(60px);
   }
 }
 
@@ -724,17 +722,26 @@ hr {
     margin: 30px auto;
   }
   .items h2 {
-    margin-top:179px;
+    transform: translateY(95px);
   }
   .items img {
-    margin-top: 98px;
+    transform: translateY(95px);
   }
   .description {
     width: 300px;
-    top: 148px;
+    transform: translateY(70px);
+  }
+  .digital_advertising .description {
+    transform: translateY(60px);
   }
   .more_detail {
-    top: 226px;
+    transform: translateY(80px);
+  }
+  .digital_advertising .more_detail {
+    transform: translateY(62px);
+  }
+  .items:hover img, .items:hover h2 {
+    transform: translateY(50px);
   }
 }
 
@@ -796,7 +803,7 @@ hr {
   background: linear-gradient(180deg, #2B4074 0%, rgba(43, 64, 116, 0) 100%);
 }
 .recent_work_title h2 {
-  margin: 0;
+  margin: 80px 0 0 0;
   font-family: var(--secondary-font-family), sans-serif;
   font-size: 48px;
   font-weight: 400;
@@ -804,14 +811,10 @@ hr {
   text-transform: capitalize;
   text-align: center;
   color: var(--secondary-color);
-  position: relative;
-  top: 80px;
 }
 .recent_work_title hr {
-  margin: 0 auto;
+  margin: 24px auto auto auto;
   background-color: var(--secondary-color);
-  position: relative;
-  top: 106px;
 }
 .content {
   display: grid;
@@ -824,12 +827,11 @@ hr {
   justify-content: center;
 }
 .projects {
-  margin: 0 12px;
+  margin: 80px 12px 0 12px;
   position: relative;
-  top: 184px;
 }
 .projects img {
-  border-radius: 4px;
+  border-radius: var(--main-border-radius);
 }
 .titles {
   width: 268px;
@@ -849,7 +851,7 @@ hr {
   transition: all 0.3s ease;
 }
 .info-bg {
-  border-radius: 4px;
+  border-radius: var(--main-border-radius);
   margin: 0 12px;
   position: absolute;
   top: 12px;
@@ -898,7 +900,6 @@ hr {
 @media only screen and (max-width: 1023px) {
   .recent_work {
     height: 1033px;
-    top: 2407px;
   }
   .titles h2 {
     font-size: 20px;
@@ -914,27 +915,26 @@ hr {
     height: 2288px;
   }
   .recent_work_title h2 {
-    top: 40px;
+    margin-top: 40px;
   }
   .recent_work_title hr {
-    top: 69px;
+    margin-top: 28px;
   }
   .content {
     grid-template-rows: repeat(4, 532px);
     grid-template-columns: 518px;
   }
   .projects {
-    margin: 0;
-    top: 121px;
+    margin: 50px 0 0 0;
   }
   .projects img {
     width: 518px;
     height: 460px;
   }
   .titles {
-    top: 494px;
+    top: -28px;
     width: 318px;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -967,29 +967,28 @@ hr {
   .recent_work_title h2 {
     font-size: 24px;
     line-height: 28px;
-    top: 25px;
+    margin-top: 25px;
   }
   .recent_work_title hr {
     width: 50px;
     height: 8px;
-    top: 49px;
+    margin-top: 20px;
   }
   .content {
     grid-template-rows: repeat(4, 310px);
     grid-template-columns: 280px;
   }
   .projects {
-    margin: 0;
-    top: 90px;
+    margin: 41px 0 0 0;
   }
   .projects img {
     width: 280px;
     height: 250px;
   }
   .titles {
-    top: 276px;
+    top: -10px;
     width: 318px;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -1032,7 +1031,7 @@ hr {
   height: 420px;
 }
 .foto_section img {
-  border-radius: 4px;
+  border-radius: var(--main-border-radius);
   transform: translateX(150px);
   bottom: 0;
 }
@@ -1090,7 +1089,7 @@ hr {
     padding-left: 0;
   }
   .foto_section img {
-    border-radius: 4px;
+    border-radius: var(--main-border-radius);
     width: 400px;
     height: 380px;
     transform: translateX(40px);
@@ -1126,7 +1125,7 @@ hr {
   .foto_section img {
     width: 240px;
     height: 227px;
-    border-radius: 4px;
+    border-radius: var(--main-border-radius);
     transform: translateX(46px);
     bottom: 0;
   }
@@ -1288,18 +1287,15 @@ hr {
   line-height: 56px;
   text-align: center;
   text-transform: capitalize;
-  margin: 0;
-  transform: translateY(52px);
+  margin-top: 56px;
+  margin-bottom: 0;
 }
 .latest_news_title hr {
-  margin: 0 auto;
   background-color: var(--main-color);
-  position: relative;
-  top: 75px;
+  margin: 26px auto auto auto;
 }
 .latest_news_content {
-  position: relative;
-  top: 165px;
+  margin-top: 100px;
   display: grid;
   grid-template-rows: repeat(2, 385px);
   grid-template-columns: repeat(4, 298px);
@@ -1315,26 +1311,22 @@ hr {
   display: inline-block;
 }
 .news-5 {
-  position: absolute;
-  top: 460px;
+  top: 75px;
 }
 .news-6 {
-  position: absolute;
-  top: 370px;
+  top: -15px;
 }
 .news-7 {
-  position: absolute;
-  top: 414px;
+  top: 29px;
 }
 .news-8 {
-  position: absolute;
-  top: 254px;
+  top: -131px;
 }
 .news img {
   display: block;
   width: 270px;
   height: auto;
-  border-radius: 4px;
+  border-radius: var(--main-border-radius);
 }
 .news::before {
   position: absolute;
@@ -1350,7 +1342,7 @@ hr {
   letter-spacing: 2px;
   z-index: 1;
   transition: all 0.3s ease;
-  border-radius: 0 0 4px 4px;
+  border-radius: var(--special-border-radius);
 }
 .news-1::before {
   content: "3Д в брендингу";
@@ -1384,7 +1376,7 @@ hr {
 .news:hover {
   outline: 10px solid var(--main-color);
   outline-offset: -10px;
-  border-radius: 0 0 4px 4px;
+  border-radius: var(--special-border-radius);
 }
 .icon {
   position: absolute;
@@ -1406,16 +1398,8 @@ hr {
 @media only screen and (max-width: 1439px) {
   .latest_news {
     height: 1368px;
-    top: 3363px;
-  }
-  .latest_news_title h2 {
-    transform: translateY(65px);
-  }
-  .latest_news_title hr {
-    top: 93px;
   }
   .latest_news_content {
-    top: 178px;
     display: grid;
     grid-template-rows: repeat(3, 346px);
     grid-template-columns: repeat(3, 326px);
@@ -1423,44 +1407,40 @@ hr {
   .news::before {
     font-size: 18px;
   }
+  .news {
+    position: relative;
+  }
   .news-4 {
-    position: absolute;
-    top: 460px;
+    top: 115px;
   }
   .news-5 {
-    position: absolute;
-    top: 372px;
+    top: 27px;
   }
   .news-6 {
-    position: absolute;
-    top: 418px;
+    top: 73px;
   }
   .news-7 {
-    position: absolute;
-    top: 716px;
+    top: 26px;
   }
   .news-8 {
-    position: absolute;
-    top: 570px;
+    top: -120px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
   .latest_news {
     height: 1745px;
-    top: 3918px;
   }
   .latest_news_title h2 {
     font-size: 36px;
     font-weight: 400;
     line-height: 38px;
-    transform: translateY(45px);
   }
   .latest_news_title hr {
-    top: 80px;
+    margin-top: 30px;
   }
   .latest_news_content {
-    top: 150px;
+    margin-top: 50px;
     display: grid;
     grid-template-rows: repeat(5, 377px);
     grid-template-columns: repeat(2, 298px);
@@ -1468,46 +1448,42 @@ hr {
   .news::before {
     font-size: 18px;
   }
+  .news {
+    position: relative;
+  }
   .news-3 {
-    position: absolute;
-    top: 465px;
+    top: 85px;
   }
   .news-4 {
-    position: absolute;
-    top: 375px;
+    top: -5px;
   }
   .news-5 {
-    position: absolute;
-    top: 884px;
+    top: 125px;
   }
   .news-6 {
-    position: absolute;
-    top: 635px;
+    top: -124px;
   }
   .news-7 {
-    position: absolute;
-    top: 1085px;
+    top: -55px;
   }
   .news-8 {
-    position: absolute;
-    top: 1010px;
+    top: -130px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .latest_news {
     height: 1745px;
-    top: 5587px;
   }
   .latest_news_title h2 {
     font-size: 48px;
-    transform: translateY(50px);
+    margin-top: 50px;
   }
   .latest_news_title hr {
-    top: 70px;
+    margin-top: 20px;
   }
   .latest_news_content {
-    top: 140px;
+    margin-top: 60px;
   }
   .news::before {
     font-size: 18px;
@@ -1517,52 +1493,44 @@ hr {
 @media only screen and (max-width: 639px) {
   .latest_news {
     height: 2896px;
-    top: 5640px;
+    width: 320px;
   }
   .latest_news_title h2 {
     font-size: 24px;
-    transform: translateY(35px);
+    margin-top: 40px;
   }
   .latest_news_title hr {
-    top: 55px;
+    margin-top: 20px;
     width: 50px;
   }
   .latest_news_content {
-    top: 90px;
-    display: grid;
-    grid-template-rows: repeat(8, 347px);
-    grid-template-columns: 270px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
   }
   .news::before {
     font-size: 18px;
   }
   .news-2 {
-    position: absolute;
-    top: 452px;
+    margin-top: 20px;
   }
   .news-3 {
-    position: absolute;
-    top: 814px;
+    margin-top: -65px;
   }
   .news-4 {
-    position: absolute;
-    top: 1219px;
+    margin-top: 110px;
   }
   .news-5 {
-    position: absolute;
-    top: 1466px;
+    margin-top: -110px;
   }
   .news-6 {
-    position: absolute;
-    top: 1654px;
+    margin-top: 270px;
   }
   .news-7 {
-    position: absolute;
-    top: 2018px;
+    margin-top: -50px;
   }
   .news-8 {
-    position: absolute;
-    top: 2238px;
+    margin-top: 95px;
   }
 }
 
@@ -1614,7 +1582,7 @@ hr {
 .circle1 {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: var(--circle-border-radius);
   cursor: pointer;
   background-color: var(--main-color);
   border: 1px solid var(--border-color-dark);
@@ -1731,7 +1699,7 @@ hr {
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--main-color);
-  border-radius: 3px;
+  border-radius: var(--secondary-border-radius);
 }
 .di_gi1 img {
   width: 83px;
