@@ -1493,7 +1493,6 @@ hr {
 @media only screen and (max-width: 639px) {
   .latest_news {
     height: 2896px;
-    width: 320px;
   }
   .latest_news_title h2 {
     font-size: 24px;
